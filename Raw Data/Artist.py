@@ -34,8 +34,8 @@ def get_artist_info(artist_id, access_token):
 
 def main():
     # Replace these with your actual values
-    client_id = "31c2e953a1cc49eaa153d1fd504728a3"
-    client_secret = "eb2ee00f392f49bf850c16deb6e824ce"
+    client_id = ""
+    client_secret = ""
     access_token = get_spotify_token(client_id, client_secret)
 
     # Replace these with your actual album IDs
