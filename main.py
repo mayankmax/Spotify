@@ -17,18 +17,18 @@ def main():
     album_ids = ["382ObEPsp2rxGrnsizN5TX", "1A2GTWGtFfWp7KSQTwWOyo", "2noRn2Aes5aoNVsU6iWThc"]
 
     # Fetch and print artist information
-    print("Artist Information:")
-    for artist_id in artist_ids:
-        artist_info = get_artist_info(artist_id, access_token)
-        print(f"\nArtist ID: {artist_id}")
-        print(artist_info)
+    # print("Artist Information:")
+    # for artist_id in artist_ids:
+    #     artist_info = get_artist_info(artist_id, access_token)
+    #     print(f"\nArtist ID: {artist_id}")
+    #     print(artist_info)
 
-    # Fetch and print album information
+   # Fetch and print album information
     print("\nAlbum Information:")
-    for album_id in album_ids:
-        album_info = get_album_info(album_id, access_token)
-        print(f"\nAlbum ID: {album_id}")
-        print(album_info)
+    # for album_id in album_ids:
+    album_info = get_album_info("382ObEPsp2rxGrnsizN5TX", access_token)
+    print("\nAlbum ID: {382ObEPsp2rxGrnsizN5TX}")
+    print(album_info)
 
 if __name__ == "__main__":
     main()
