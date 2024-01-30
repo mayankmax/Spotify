@@ -2,6 +2,9 @@
 
 import sys
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Add the root project directory to sys.path
 project_root = '/home/mayank/Desktop/Project/DE/Spotify/'
@@ -33,24 +36,27 @@ class ArtistExtract:
         return self.result
 
 # Sample artist_ids
-artist_ids = ["2CIMQHirSU0MQqyYHq0eOx", "57dN52uHvrHOxijzpIgu3E", "1vCWHaC5f2uS3yhpwWbIA6"]
-client_id = "31c2e953a1cc49eaa153d1fd504728a3"
-client_secret = "eb2ee00f392f49bf850c16deb6e824ce"
-access_token = get_spotify_token(client_id, client_secret)
+# artist_ids = ["2CIMQHirSU0MQqyYHq0eOx", "57dN52uHvrHOxijzpIgu3E", "1vCWHaC5f2uS3yhpwWbIA6"]
+# client_id = os.getenv('spotify_client_id')
+# client_secret = os.getenv('spotify_client_secret')
 
-artistObj = ArtistExtract(artist_ids, access_token)
+# print(client_id)
+# print(client_secret)
+# access_token = get_spotify_token(client_id, client_secret)
 
-# Extract artist data
-artistObj.ExtractArtistData()
+# artistObj = ArtistExtract(artist_ids, access_token)
 
-# Get the result dictionary
-result_dict = artistObj.get_result()
+# # Extract artist data
+# artistObj.ExtractArtistData()
 
-# Print the result for each artist
-for artist_id, artist_info in result_dict.items():
-    print(f"Artist ID: {artist_id}")
-    print(f"Name: {artist_info['artist_name']}")
-    print(f"Popularity: {artist_info['artist_popularity']}")
-    print(f"Genre: {artist_info['artist_genre']}")
-    print(f"Followers: {artist_info['artist_followers']}")
-    print("\n")
+# # Get the result dictionary
+# result_dict = artistObj.get_result()
+
+# # Print the result for each artist
+# for artist_id, artist_info in result_dict.items():
+#     print(f"Artist ID: {artist_id}")
+#     print(f"Name: {artist_info['artist_name']}")
+#     print(f"Popularity: {artist_info['artist_popularity']}")
+#     print(f"Genre: {artist_info['artist_genre']}")
+#     print(f"Followers: {artist_info['artist_followers']}")
+#     print("\n")
