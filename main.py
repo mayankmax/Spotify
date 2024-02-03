@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 path = "/home/mayank/Desktop/Project/DE/Spotify/ETL/Tranform", "/home/mayank/Desktop/Project/DE/Spotify/Config"
 sys.path.append(path)
 
-from ETL.Transform import AlbumTransorm
+from ETL.Transform import AlbumTransform
 from Config import connection
 
 load_dotenv()
@@ -43,10 +43,11 @@ def main():
 #     print(album_info)
 
     conn = connection.create_connection(os.getenv("aws_hostname"),os.getenv("aws_dbname"),os.getenv("aws_port"),os.getenv("aws_user"),os.getenv("aws_password"))
+    #print(os.getenv("aws_hostname"),os.getenv("aws_dbname"),os.getenv("aws_port"),os.getenv("aws_user"),os.getenv("aws_password"))
     print(conn)
     query = "SELECT * from albums"
     
-    albumTransObj = AlbumTransorm(conn,query)
+    albumTransObj = AlbumTransform(conn,query)
     albumTransObj.fetch()
     print(albumTransObj.showResult())
 

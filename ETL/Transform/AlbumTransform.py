@@ -1,4 +1,4 @@
-class AlbumTranform:
+class AlbumTransform:
     def __init__(self,conn,query):
         self.conn = conn
         self.query = query
